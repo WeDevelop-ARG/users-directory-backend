@@ -24,11 +24,11 @@ const getPeople = () => {
 const findPeopleByName = (name) => {
   const people = getPeople();
 
-  const sanitizedName = name && name.trim();
+  const sanitizedName = name && name.trim().toLowerCase();
 
   return people.filter((person) => {
-    if (person.firstName.includes(sanitizedName)) return true;
-    if (person.lastName.includes(sanitizedName)) return true;
+    if (person.firstName.toLowerCase().includes(sanitizedName)) return true;
+    if (person.lastName.toLowerCase().includes(sanitizedName)) return true;
 
     return false;
   });
