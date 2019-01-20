@@ -1,8 +1,11 @@
 const express = require('express');
 const faker = require('faker');
+const cors = require('cors');
 
 const PORT = 3000;
 const app = express();
+
+app.use(cors());
 
 let _people = [];
 const getPeople = () => {
